@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Hero component */
+@layer components {
+  .hero-container {
+    @apply max-w-6xl mx-auto px-8;
+  }
+  
+  .hero-grid {
+    @apply grid lg:grid-cols-[320px_1fr] gap-0 lg:gap-[30px] items-center;
+  }
+  
+  .hero-image-container {
+    @apply flex justify-center lg:justify-start;
+  }
+  
+  .hero-content {
+    @apply space-y-2 lg:space-y-3;
+  }
+  
+  /* Ensure no extra spacing from grid system */
+  .hero-grid > * {
+    @apply min-w-0;
+  }
+  
+  /* Optimize image container */
+  .hero-image-wrapper {
+    @apply w-80 h-80 bg-gradient-to-br from-orange-200 via-orange-300 to-orange-400 rounded-3xl p-1;
+  }
+  
+  /* Responsive text sizing */
+  .hero-title {
+    @apply text-4xl lg:text-5xl font-bold mb-2 lg:mb-3 leading-tight;
+  }
+  
+  .hero-description {
+    @apply text-gray-300 text-base lg:text-lg leading-relaxed mb-3 lg:mb-4 text-justify;
+  }
+  
+  .hero-button {
+    @apply bg-blue-500 hover:bg-blue-600 text-white px-8 lg:px-10 py-3 lg:py-4 rounded-full font-medium transition-colors duration-200 text-base inline-block;
+  }
+  
+  /* Add role/title text */
+  .hero-role {
+    @apply text-blue-400 text-lg lg:text-xl font-medium mb-2;
+  }
+}
+
+/* Global optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove any default margins/padding that might affect grid */
+.grid {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure grid items don't have extra spacing */
+.grid > * {
+  margin: 0;
+  padding: 0;
+}
+
+/* Consistent section alignment */
+section {
+  @apply max-w-6xl mx-auto px-8;
+}
