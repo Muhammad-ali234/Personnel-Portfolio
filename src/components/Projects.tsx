@@ -20,7 +20,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       technologies: ['Flutter', 'Node.js', 'MySQL', 'Socket.io', 'Provider', 'Express', 'Firebase'],
       challenges: 'Key challenges included structuring a scalable role-based system, managing real-time communication, and integrating state management with Flutter. Implemented socket.io for real-time messaging, used Provider for efficient state handling, and built REST APIs to support buyer-seller interactions, test drive booking, vehicle inspections, and admin approvals.',
       liveDemoUrl: 'https://vads-demo.com',
-      repositoryUrl: 'https://github.com/yourusername/vads-platform',
+      repositoryUrl: 'https://github.com/Muhammad-ali234/VADS-Vehicle-Auction-and-Dealership-System-.git',
       screenType: 'mobile',
       previews: [
         {
@@ -59,7 +59,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       technologies: ['Flutter', 'Dart', 'Provider', 'Hive', 'Charts', 'Local Notifications'],
       challenges: 'Key challenges included designing an intuitive UI for habit tracking, implementing local data persistence, creating engaging analytics visualizations, and managing complex state for routine tracking. Solutions involved using Provider for state management, SQLite for local data storage, and custom chart implementations for progress visualization.',
       liveDemoUrl: 'https://daily-routine-tracker-demo.com',
-      repositoryUrl: 'https://github.com/yourusername/daily-routine-tracker',
+      repositoryUrl: 'https://github.com/Muhammad-ali234/daily-routine-tracker.git',
       screenType: 'desktop',
       previews: [
         {
@@ -94,7 +94,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       technologies: ['Flutter', 'Dart', 'Provider', 'Shared Preferences', 'Image Picker', 'Material Design'],
       challenges: 'Key challenges included implementing real-time auto-save functionality, creating an efficient search system across note titles and content, managing state with Provider pattern, and designing an intuitive user interface for mobile devices. Solutions involved using Provider for state management, implementing periodic auto-save timers, creating efficient search algorithms, and following Material Design principles for optimal user experience.',
       liveDemoUrl: 'https://notes-app-demo.com',
-      repositoryUrl: 'https://github.com/yourusername/notes-app',
+      repositoryUrl: 'https://github.com/Muhammad-ali234/notes-app.git',
       screenType: 'mobile',
       previews: [
         {
