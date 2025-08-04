@@ -2,6 +2,29 @@ import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import ProjectDetail from './ProjectDetail';
 
+// VADS Project
+import VadsImage from '../assets/projects/vadspng.png';
+import BuyerHome from '../assets/projects/Home screen Buyer.png';
+import TestDriveDetail from '../assets/projects/Test Drive detail Screen Buyer.png';
+import TestDriveCalendar from '../assets/projects/Test Drive Screen By Calender Dates Buyer.png';
+import VehicleListed from '../assets/projects/Vehicle Listed Screen  Seller.png';
+import CarRequest from '../assets/projects/Car Request Seller.png';
+import ChatScreen from '../assets/projects/Chat screen.png';
+
+// Daily Routine Tracker
+import DailyRoutineHome from '../assets/projects/Daily Routine tracker home screen.png';
+import DailyRoutineTask from '../assets/projects/Daily routine tracker task screen.png';
+import DailyRoutineHabit from '../assets/projects/daily routinen tracker habit screen.png';
+import DailyRoutineProject from '../assets/projects/daily routinen tracker project screen.png';
+import DailyRoutineAnalytics from '../assets/projects/daily routine tracker analytics screen.png';
+
+// Smart Notes App
+import NotesAppMain from '../assets/projects/Notes app.png';
+import NotesAppHome from '../assets/projects/Notes app Home screen .png';
+import NotesAppCategories from '../assets/projects/notes app categories screen .png';
+import NotesAppSearch from '../assets/projects/Notes app serach screen .png';
+
+
 interface ProjectsProps {
   darkMode: boolean;
 }
@@ -15,7 +38,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       title: 'VADS - Vehicle At Doorstep',
       category: 'Capstone Project',
       description: 'A multi-role automotive service platform connecting vehicle sellers, buyers, drivers, and employees. Features real-time chat, test drives at user locations, inspection requests, and admin dashboards.',
-      image: '/src/assets/projects/vadspng.png',
+      image:VadsImage,
       overview: 'VADS is a Flutter-based mobile and web platform designed to digitize vehicle trading and services. It enables sellers to list cars, buyers to book test drives at home, employees to manage requests, and drivers to handle pickups. The system features real-time chat, inspection/test drive management, vehicle approval workflows, and role-based dashboards.',
       technologies: ['Flutter', 'Node.js', 'MySQL', 'Socket.io', 'Provider', 'Express', 'Firebase'],
       challenges: 'Key challenges included structuring a scalable role-based system, managing real-time communication, and integrating state management with Flutter. Implemented socket.io for real-time messaging, used Provider for efficient state handling, and built REST APIs to support buyer-seller interactions, test drive booking, vehicle inspections, and admin approvals.',
@@ -25,27 +48,27 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       previews: [
         {
           label: 'Buyer Side - Home Screen',
-          image: '/src/assets/projects/Home screen Buyer.png'
+          image: BuyerHome
         },
         {
           label: 'Buyer Side - Test Drive Details',
-          image: '/src/assets/projects/Test Drive detail Screen Buyer.png'
+          image:TestDriveDetail
         },
         {
           label: 'Buyer Side - Test Drive Calendar',
-          image: '/src/assets/projects/Test Drive Screen By Calender Dates Buyer.png'
+          image: TestDriveCalendar
         },
         {
           label: 'Seller Side - Vehicle Listed',
-          image: '/src/assets/projects/Vehicle Listed Screen  Seller.png'
+          image: VehicleListed
         },
         {
           label: 'Seller Side - Car Request',
-          image: '/src/assets/projects/Car Request Seller.png'
+          image: CarRequest
         },
         {
           label: 'Chat Interface',
-          image: '/src/assets/projects/Chat screen.png'
+          image: ChatScreen
         }
       ]
     },
@@ -54,7 +77,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       title: 'Daily Routine Tracker',
       category: 'Flutter Application',
       description: 'A comprehensive Flutter application for tracking daily routines, habits, and tasks. Features habit tracking, task management, analytics dashboard, and progress visualization to help users build better daily routines.',
-      image: '/src/assets/projects/Daily Routine tracker home screen.png',
+      image: DailyRoutineHome,
       overview: 'A feature-rich Flutter application designed to help users build and maintain productive daily routines. The app includes habit tracking, task management, progress analytics, and motivational features to support users in achieving their daily goals and building lasting habits.',
       technologies: ['Flutter', 'Dart', 'Provider', 'Hive', 'Charts', 'Local Notifications'],
       challenges: 'Key challenges included designing an intuitive UI for habit tracking, implementing local data persistence, creating engaging analytics visualizations, and managing complex state for routine tracking. Solutions involved using Provider for state management, SQLite for local data storage, and custom chart implementations for progress visualization.',
@@ -64,23 +87,23 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       previews: [
         {
           label: 'Home Screen',
-          image: '/src/assets/projects/Daily Routine tracker home screen.png'
+          image: DailyRoutineHome
         },
         {
           label: 'Task Screen',
-          image: '/src/assets/projects/Daily Routine tracker task screen.png'
+          image: DailyRoutineTask
         },
         {
           label: 'Habit Screen',
-          image: '/src/assets/projects/daily routinen tracker habit screen.png'
+          image: DailyRoutineHabit
         },
         {
           label: 'Project Screen',
-          image: '/src/assets/projects/daily routinen tracker project screen.png'
+          image: DailyRoutineProject
         },
         {
           label: 'Analytics Screen',
-          image: '/src/assets/projects/daily routine tracker analytics screen.png'
+          image: DailyRoutineAnalytics
         }
       ]
     },
@@ -89,7 +112,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       title: 'Smart Notes App',
       category: 'Mobile Development',
       description: 'A feature-rich notes application built with Flutter that allows users to create, edit, organize, and search notes with categories. Features include auto-save functionality, image attachments, real-time search, and intuitive UI design.',
-      image: '/src/assets/projects/Notes app.png',
+      image: NotesAppMain,
       overview: 'A comprehensive mobile notes application developed using Flutter framework that provides users with an intuitive interface for note-taking and organization. The app features automatic saving, category-based organization, powerful search functionality, and a clean, modern design that enhances productivity and user experience.',
       technologies: ['Flutter', 'Dart', 'Provider', 'Shared Preferences', 'Image Picker', 'Material Design'],
       challenges: 'Key challenges included implementing real-time auto-save functionality, creating an efficient search system across note titles and content, managing state with Provider pattern, and designing an intuitive user interface for mobile devices. Solutions involved using Provider for state management, implementing periodic auto-save timers, creating efficient search algorithms, and following Material Design principles for optimal user experience.',
@@ -99,15 +122,15 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       previews: [
         {
           label: 'Home Screen',
-          image: '/src/assets/projects/Notes app Home screen .png'
+          image: NotesAppHome
         },
         {
           label: 'Categories Screen',
-          image: '/src/assets/projects/notes app categories screen .png'
+          image: NotesAppCategories
         },
         {
           label: 'Search Screen',
-          image: '/src/assets/projects/Notes app serach screen .png'
+          image: NotesAppSearch
         }
       ]
     },
