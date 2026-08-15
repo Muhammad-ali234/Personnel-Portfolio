@@ -14,6 +14,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/Personnel-Portfolio/', // 👈 Required for GitHub Pages
+  base: '/', // 👈 For Vercel deployment (root path)
   plugins: [react()],
 });
