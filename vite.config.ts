@@ -14,6 +14,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/', // 👈 For Vercel deployment (root path)
+  base: './', // Works for both GitHub Pages subpath (/Personnel-Portfolio/) and Vercel root (/)
   plugins: [react()],
 });
