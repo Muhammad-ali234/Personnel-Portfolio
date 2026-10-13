@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Muhammad Ali — Resume</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      font-size: 9pt;
+      line-height: 1.35;
+    }
+
+    /* Header */
+    .header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 13mm 16mm 10mm 16mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3.5px solid #10b981;
+    }
+    .header-left h1 {
+      font-size: 22pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+    .header-left .title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #34d399;
+      margin-top: 4px;
+      letter-spacing: 0.2px;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 8.2pt;
+      color: #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 7px;
+    }
+    .contact-item a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+    .contact-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #34d399;
+      flex-shrink: 0;
+    }
+
+    /* Main Container (2 Columns) */
+    .container {
+      display: flex;
+      flex: 1;
+      height: calc(297mm - 38mm);
+      overflow: hidden;
+    }
+
+    /* Left Sidebar */
+    .sidebar {
+      width: 32%;
+      background: #f8fafc;
+      border-right: 1px solid #e2e8f0;
+      padding: 8mm 9mm 6mm 12mm;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    /* Right Main Content */
+    .main-content {
+      width: 68%;
+      padding: 8mm 13mm 6mm 12mm;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    /* Section Typography */
+    .section-title {
+      font-size: 9.3pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0f172a;
+      border-bottom: 1.5px solid #10b981;
+      padding-bottom: 3px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 1px;
+    }
+
+    /* Skills Grid */
+    .skill-group {
+      margin-bottom: 5px;
+    }
+    .skill-category {
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1px;
+    }
+    .skill-list {
+      font-size: 8pt;
+      color: #475569;
+      line-height: 1.32;
+    }
+
+    /* Education */
+    .edu-item {
+      margin-bottom: 5px;
+    }
+    .edu-degree {
+      font-weight: 700;
+      font-size: 8.4pt;
+      color: #0f172a;
+      line-height: 1.25;
+    }
+    .edu-institution {
+      font-size: 8pt;
+      color: #059669;
+      font-weight: 600;
+    }
+    .edu-date {
+      font-size: 7.5pt;
+      color: #64748b;
+      margin-top: 1px;
+    }
+
+    /* Certifications */
+    .cert-item {
+      margin-bottom: 7px;
+    }
+    .cert-title {
+      font-weight: 700;
+      font-size: 8.2pt;
+      color: #0f172a;
+      line-height: 1.25;
+    }
+    .cert-meta {
+      font-size: 7.6pt;
+      color: #64748b;
+      margin-top: 1px;
+    }
+    .cert-issuer {
+      color: #059669;
+      font-weight: 700;
+    }
+    .cert-link {
+      display: inline-block;
+      font-size: 7.1pt;
+      color: #047857;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 2px;
+      padding: 1px 5px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 3px;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 8.4pt;
+      color: #334155;
+      line-height: 1.38;
+      text-align: justify;
+    }
+
+    /* Project Cards */
+    .project-card {
+      margin-bottom: 7px;
+    }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+    .project-title {
+      font-size: 9.1pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .project-badge {
+      font-size: 7.2pt;
+      font-weight: 700;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      padding: 1px 6px;
+      border-radius: 10px;
+    }
+    .project-tech {
+      font-size: 7.8pt;
+      font-weight: 600;
+      color: #059669;
+      margin-bottom: 3px;
+    }
+    .project-bullets {
+      padding-left: 12px;
+      font-size: 8pt;
+      color: #334155;
+      line-height: 1.34;
+    }
+    .project-bullets li {
+      margin-bottom: 2px;
+    }
+
+    /* Work Experience */
+    .exp-item {
+      margin-bottom: 6px;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+    .exp-role {
+      font-size: 8.7pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .exp-date {
+      font-size: 7.5pt;
+      color: #64748b;
+      font-weight: 600;
+    }
+    .exp-company {
+      font-size: 7.9pt;
+      font-weight: 600;
+      color: #059669;
+      margin-bottom: 2px;
+    }
+    .exp-bullets {
+      padding-left: 12px;
+      font-size: 8pt;
+      color: #334155;
+      line-height: 1.34;
+    }
+    .exp-bullets li {
+      margin-bottom: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Executive Header -->
+  <header class="header">
+    <div class="header-left">
+      <h1>MUHAMMAD ALI</h1>
+      <div class="title">Full-Stack, Mobile & Computer Vision Systems Engineer</div>
+    </div>
+    <div class="header-right">
+      <!-- Email -->
+      <div class="contact-item">
+        <a href="mailto:muhammadali.chd12@gmail.com">muhammadali.chd12@gmail.com</a>
+        <span class="contact-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </span>
+      </div>
+      <!-- Phone / WhatsApp -->
+      <div class="contact-item">
+        <a href="tel:+923184439061">+92 318 4439061</a>
+        <span class="contact-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </span>
+      </div>
+      <!-- Location -->
+      <div class="contact-item">
+        <span>Peshawar, KPK, Pakistan</span>
+        <span class="contact-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </span>
+      </div>
+      <!-- GitHub -->
+      <div class="contact-item">
+        <a href="https://github.com/Muhammad-ali234" target="_blank">github.com/Muhammad-ali234</a>
+        <span class="contact-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#34d399">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </span>
+      </div>
+      <!-- LinkedIn -->
+      <div class="contact-item">
+        <a href="https://www.linkedin.com/in/muhammad-ali-a5367b204" target="_blank">linkedin.com/in/muhammad-ali</a>
+        <span class="contact-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#34d399">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main 2-Column Body -->
+  <div class="container">
+    
+    <!-- Left Sidebar: Skills, Education, Certifications -->
+    <aside class="sidebar">
+      
+      <!-- Core Skills -->
+      <section>
+        <div class="section-title">Technical Skills</div>
+        
+        <div class="skill-group">
+          <div class="skill-category">Programming Languages</div>
+          <div class="skill-list">JavaScript (ES6+), TypeScript, Python, Dart, C++, SQL</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-category">Frontend & Web</div>
+          <div class="skill-list">React.js, Tailwind CSS, HTML5, CSS3, Vite, Component Architecture, Responsive UI</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-category">Mobile Engineering</div>
+          <div class="skill-list">Flutter, Dart, Provider, State Architecture, Hive, Material 3, SQLite, Device Hardware APIs</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-category">Backend & Databases</div>
+          <div class="skill-list">Node.js, Express.js, FastAPI, MySQL, PostgreSQL, MongoDB, Firebase, REST APIs, WebSockets</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-category">AI & Computer Vision</div>
+          <div class="skill-list">YOLOv8, OpenCV, ByteTrack, Multi-Object Tracking, Real-Time Edge Inference, Plant Telemetry</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-category">Developer Tools & Printing</div>
+          <div class="skill-list">Git, GitHub, Postman, JWT Auth, Thermal Printing (ESC/POS 80mm/58mm), A4/A5 PDF Engine</div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section>
+        <div class="section-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">Bachelor of Science in Software Engineering (BSSE)</div>
+          <div class="edu-institution">City University of Science & IT, Peshawar</div>
+          <div class="edu-date">2020 – 2024 | Peshawar, Pakistan</div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section>
+        <div class="section-title">Certifications</div>
+        
+        <div class="cert-item">
+          <div class="cert-title">Flutter Application Development</div>
+          <div class="cert-meta">
+            <span class="cert-issuer">Coursera</span> • May 2025
+          </div>
+          <a href="https://www.coursera.org/account/accomplishments/specialization/1FHA81638JM6" target="_blank" class="cert-link">Verify Credential ↗</a>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-title">Web Design Specialization</div>
+          <div class="cert-meta">
+            <span class="cert-issuer">Coursera</span> • Feb 2023
+          </div>
+          <a href="https://www.coursera.org/account/accomplishments/specialization/SPUPHRKGF85A" target="_blank" class="cert-link">Verify Credential ↗</a>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-title">Flutter Fellowship Graduate</div>
+          <div class="cert-meta">
+            <span class="cert-issuer">Bytewise Limited</span> • Jun 2023
+          </div>
+          <a href="https://verification.givemycertificate.com/v/b7709b50-3eec-414c-ab17-e75e11977ffc" target="_blank" class="cert-link">Verify Credential ↗</a>
+        </div>
+      </section>
+
+      <!-- Key Strengths -->
+      <section>
+        <div class="section-title">Key Strengths</div>
+        <div class="skill-list">
+          • Enterprise POS & Accounting<br>
+          • Production Computer Vision<br>
+          • 4-Role Mobile Architectures<br>
+          • Database Normalization & ACID<br>
+          • End-to-End Client Deployments
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- Right Content: Summary, Delivered Projects, Experience -->
+    <main class="main-content">
+      
+      <!-- Summary -->
+      <section>
+        <div class="section-title">Professional Summary</div>
+        <p class="summary-text">
+          Results-driven Software Engineer specialized in architecting and delivering full-stack web applications (React.js, Node.js), high-performance cross-platform mobile apps (Flutter), and industrial computer vision systems (YOLOv8, OpenCV). Proven track record of taking complex commercial client requirements from initial system design to production deployment, including commercial Accounting & POS software delivered to 10+ shops, factory ERP & pipe automation delivered to A-One PVC Company, and multi-party automotive service platforms.
+        </p>
+      </section>
+
+      <!-- Flagship Delivered Projects -->
+      <section>
+        <div class="section-title">Delivered Flagship Projects</div>
+
+        <!-- Project 1: Accounting & POS -->
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-title">Accounting & POS Software — Enterprise ERP</span>
+            <span class="project-badge">Delivered to 10+ Shop Clients</span>
+          </div>
+          <div class="project-tech">React.js • Node.js • Express • MySQL • Tailwind CSS • WebSockets • JWT</div>
+          <ul class="project-bullets">
+            <li>Engineered a full-featured commercial financial platform featuring rapid POS checkout, supplier purchases, and bidirectional returns (sales & purchase returns) with strict transactional balance recalculations.</li>
+            <li>Implemented customer & vendor ledgers, quotation-to-sales conversion pipeline, operational expense categorization, and bank account / cheque clearance reconciliation workflows.</li>
+            <li>Built granular inventory stock valuation, GST tax reports, staff audit trail logs, and dynamic printing engine supporting thermal receipts (80mm/58mm), A4, and A5 invoice layouts.</li>
+          </ul>
+        </div>
+
+        <!-- Project 2: PipeVision AI -->
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-title">PipeVision AI — Factory ERP & Automated Pipe Counting</span>
+            <span class="project-badge">Delivered to A-One PVC Company</span>
+          </div>
+          <div class="project-tech">Python • YOLOv8 • OpenCV • React.js • Node.js • FastAPI • MySQL • WebSockets</div>
+          <ul class="project-bullets">
+            <li>Delivered an integrated dual-engine manufacturing platform combining comprehensive factory ERP operations with real-time industrial conveyor computer vision automation.</li>
+            <li>Built factory ERP modules covering biometric & face shift attendance for 60+ workers, daily sales dispatches & truck gate passes, supplier resin purchases (tons), and factory OPEX ledgers.</li>
+            <li>Trained custom YOLOv8 model for 60 FPS real-time conveyor tracking, automated pipe tallying (>14,800 units/shift), diameter anomaly detection, and sub-millisecond WebSocket plant floor telemetry.</li>
+          </ul>
+        </div>
+
+        <!-- Project 3: VADS -->
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-title">VADS — Vehicle At Doorstep Platform</span>
+            <span class="project-badge">Delivered to 1 Automotive Client</span>
+          </div>
+          <div class="project-tech">Flutter • Node.js • Express • MySQL • Socket.io • Provider • Firebase Auth</div>
+          <ul class="project-bullets">
+            <li>Architected a multi-role automotive platform connecting buyers, sellers, drivers, and employees with real-time Socket.io chat, dynamic doorstep test drive calendar bookings, and vehicle inspections.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- Work Experience -->
+      <section>
+        <div class="section-title">Work Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-role">Full-Stack & Mobile Software Engineer</span>
+            <span class="exp-date">Aug 2024 – Present</span>
+          </div>
+          <div class="exp-company">Independent Client Deployments & Freelance Engineering | Peshawar, Pakistan</div>
+          <ul class="exp-bullets">
+            <li>Successfully architected, coded, and deployed custom software solutions across retail, manufacturing, and automotive domains, managing database schemas, backend APIs, and frontends.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-role">Flutter Mobile Developer Intern</span>
+            <span class="exp-date">Apr 2024 – Jul 2024</span>
+          </div>
+          <div class="exp-company">FF-Steel | Peshawar, Pakistan</div>
+          <ul class="exp-bullets">
+            <li>Engineered mobile UI components in Flutter, connected REST APIs, and managed application state using Provider.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-role">Flutter Mobile Fellow</span>
+            <span class="exp-date">Mar 2023 – Jun 2023</span>
+          </div>
+          <div class="exp-company">Bytewise Limited | Remote</div>
+          <ul class="exp-bullets">
+            <li>Completed intensive hands-on fellowship covering mobile clean architecture, custom widgets, and collaborative Git practices.</li>
+          </ul>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>

@@ -1,167 +1,158 @@
 import React from 'react';
-import { Calendar, MapPin, Building } from 'lucide-react';
+import { Calendar, MapPin, Building2, CheckCircle2, Sparkles } from 'lucide-react';
 
 interface ExperienceProps {
   darkMode: boolean;
 }
 
-const Experience: React.FC<ExperienceProps> = ({ darkMode }) => {
+const Experience: React.FC<ExperienceProps> = () => {
   const experiences = [
-   
-   
-   
     {
-      id: 4,
+      id: 1,
       title: 'Flutter & Node.js Developer',
-      company: 'Freelance / Personal Projects',
+      company: 'Freelance & Independent Projects',
       location: 'Peshawar, Pakistan',
-      duration: 'Aug 2024 - Present',
-      type: 'Freelance',
+      duration: 'Aug 2024 — Present',
+      type: 'Freelance / Full-Stack',
       description:
-        'Developed full-stack applications using Flutter for frontend and Node.js for backend services.',
+        'Architected end-to-end full-stack applications utilizing Flutter for responsive mobile clients and Node.js with Express & MySQL for robust backend infrastructure.',
       achievements: [
-        'Built the “Vehicle at The Doorstep” (VADS) app with four user roles',
-        'Integrated MySQL backend with JWT authentication and Provider state management',
-        'Implemented real-time chat using Socket.io',
-        'Designed and developed RESTful APIs for app features',
-        'Managed server deployment and database setup on DigitalOcean',
+        'Built the “Vehicle at The Doorstep” (VADS) capstone system supporting 4 distinct user roles (Buyer, Seller, Employee, Driver).',
+        'Implemented real-time bidirectional customer messaging using Socket.io and Provider state management.',
+        'Integrated MySQL relational backend with secure JWT authentication and role-based middleware.',
+        'Deployed production API services and configured databases on DigitalOcean cloud servers.',
       ],
-      technologies: ['Flutter', 'Node.js', 'MySQL', 'Provider', 'Socket.io'],
+      technologies: ['Flutter', 'Node.js', 'MySQL', 'Socket.io', 'Provider', 'Express', 'JWT', 'REST APIs'],
     },
     {
-      id: 5,
-      title: 'Flutter Intern',
+      id: 2,
+      title: 'Flutter Developer Intern',
       company: 'FF-Steel',
       location: 'Peshawar, Pakistan',
-      duration: 'Apr 2024 - Jul 2024',
+      duration: 'Apr 2024 — Jul 2024',
       type: 'Internship',
       description:
-        'Worked on Flutter mobile apps with focus on UI development and component architecture.',
+        'Contributed to Flutter mobile applications with deep focus on modular UI development, responsive screen layouts, and component architecture.',
       achievements: [
-        'Developed multiple screens using widget-based architecture',
-        'Utilized Provider for consistent state management across modules',
-        'Collaborated with senior developers to implement new features',
-        'Participated in daily standups and sprint reviews',
+        'Developed reusable widget systems following Material Design guidelines across multiple feature screens.',
+        'Integrated Provider state management to ensure seamless reactive data flow across application views.',
+        'Collaborated directly with senior engineers in sprint reviews, code architecture discussions, and daily standups.',
       ],
-      technologies: ['Flutter', 'Widgets', 'State Management', 'Provider'],
+      technologies: ['Flutter', 'Dart', 'State Management', 'Provider', 'Git', 'Agile / Scrum'],
     },
     {
-      id: 6,
-      title: 'Flutter Fellow',
+      id: 3,
+      title: 'Flutter Fellowship Graduate',
       company: 'Bytewise Limited',
       location: 'Remote',
-      duration: 'Mar 2023 - Jun 2023',
-      type: 'Remote Fellowship',
+      duration: 'Mar 2023 — Jun 2023',
+      type: 'Fellowship',
       description:
-        'Joined Bytewise’s Flutter fellowship program to deepen technical skills in cross-platform mobile development.',
+        'Selected for an intensive 3-month fellowship program focused on advanced cross-platform mobile development, clean code patterns, and professional mentorship.',
       achievements: [
-        'Completed structured training in Flutter framework and UI components',
-        'Built demo apps following best practices and modular structure',
-        'Practiced effective use of Provider and custom widgets',
-        'Received mentorship from experienced Flutter engineers',
+        'Completed rigorous hands-on curriculum covering Flutter core architecture, lifecycle management, and custom widget creation.',
+        'Engineered demo applications adhering to clean architecture principles and testable component structure.',
+        'Received direct technical mentorship from experienced Flutter industry leaders.',
       ],
-      technologies: ['Flutter', 'Provider', 'Widgets', 'UI Architecture'],
+      technologies: ['Flutter', 'Dart', 'Provider', 'Widgets', 'UI/UX Architecture'],
     },
   ];
 
   return (
-    <section id="experience" className={`py-16 transition-colors duration-300 ${
-      darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'
-    }`}>
-      <div className="max-w-6xl mx-auto px-8">
-        <h2 className="text-3xl font-bold mb-12">Experience</h2>
+    <section id="experience" className="py-24 relative overflow-hidden">
+      <div className="section-container relative z-10">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Career Milestones</span>
+          </div>
+          <h2 className="section-title text-slate-900 dark:text-white">
+            Professional <span className="gradient-text-primary">Experience</span>
+          </h2>
+          <p className="text-slate-600 dark:text-slate-300 text-base">
+            My journey developing mobile products, working with engineering teams, and building scalable full-stack software.
+          </p>
+        </div>
 
-        <div className="space-y-12">
-          {experiences.map((experience) => (
-            <div key={experience.id} className="relative">
-              <div className={`absolute left-6 top-0 bottom-0 w-0.5 transition-colors duration-300 ${
-                darkMode ? 'bg-gray-700' : 'bg-gray-300'
-              }`}></div>
+        {/* Connected Timeline */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical Connecting Line */}
+          <div className="absolute left-4 sm:left-8 top-4 bottom-4 w-0.5 bg-gradient-to-b from-emerald-500 via-teal-500 to-amber-500/40" />
 
-              <div className="flex items-start space-x-6">
-                <div className="relative z-10 flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                  <Building className="w-6 h-6 text-white" />
-                </div>
+          <div className="space-y-12">
+            {experiences.map((exp) => (
+              <div key={exp.id} className="relative pl-12 sm:pl-20 group">
+                {/* Milestone Node */}
+                <div className="absolute left-1.5 sm:left-5.5 top-1.5 w-6 h-6 rounded-full bg-white dark:bg-slate-900 border-4 border-emerald-500 shadow-md shadow-emerald-500/30 flex items-center justify-center group-hover:scale-125 group-hover:border-amber-400 transition-all duration-300" />
 
-                <div className={`flex-1 rounded-lg p-6 transition-colors duration-300 ${
-                  darkMode ? 'bg-gray-800' : 'bg-white border border-gray-200'
-                }`}>
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                {/* Experience Card */}
+                <div className="glass-card-hover rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-white/10 space-y-5">
+                  {/* Header Row */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-white/10 pb-4">
                     <div>
-                      <h3 className={`text-xl font-bold mb-1 transition-colors duration-300 ${
-                        darkMode ? 'text-white' : 'text-gray-900'
-                      }`}>{experience.title}</h3>
-                      <div className={`flex items-center space-x-4 text-sm transition-colors duration-300 ${
-                        darkMode ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        <div className="flex items-center space-x-1">
-                          <Building className="w-4 h-4" />
-                          <span>{experience.company}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <MapPin className="w-4 h-4" />
-                          <span>{experience.location}</span>
-                        </div>
+                      <h3 className="font-heading font-bold text-xl text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
+                        {exp.title}
+                      </h3>
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-sm text-slate-600 dark:text-slate-300">
+                        <span className="flex items-center gap-1.5 font-semibold text-slate-800 dark:text-slate-200">
+                          <Building2 className="w-4 h-4 text-emerald-500" />
+                          {exp.company}
+                        </span>
+                        <span className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+                          <MapPin className="w-3.5 h-3.5" />
+                          {exp.location}
+                        </span>
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-4 mt-2 lg:mt-0">
-                      <div className={`flex items-center space-x-1 text-sm transition-colors duration-300 ${
-                        darkMode ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        <Calendar className="w-4 h-4" />
-                        <span>{experience.duration}</span>
-                      </div>
-                      <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium">
-                        {experience.type}
+                    <div className="flex items-center gap-2.5 self-start sm:self-auto">
+                      <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                        <Calendar className="w-3.5 h-3.5 text-amber-500" />
+                        {exp.duration}
+                      </span>
+                      <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                        {exp.type}
                       </span>
                     </div>
                   </div>
 
-                  <p className={`mb-4 leading-relaxed transition-colors duration-300 ${
-                    darkMode ? 'text-gray-300' : 'text-gray-600'
-                  }`}>{experience.description}</p>
+                  {/* Summary */}
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                    {exp.description}
+                  </p>
 
-                  <div className="mb-4">
-                    <h4 className={`font-semibold mb-2 transition-colors duration-300 ${
-                      darkMode ? 'text-white' : 'text-gray-900'
-                    }`}>Key Achievements:</h4>
-                    <ul className="space-y-1">
-                      {experience.achievements.map((achievement, index) => (
-                        <li
-                          key={index}
-                          className={`text-sm flex items-start space-x-2 transition-colors duration-300 ${
-                            darkMode ? 'text-gray-300' : 'text-gray-600'
-                          }`}
-                        >
-                          <span className="text-blue-400 mt-1">•</span>
+                  {/* Key Achievements */}
+                  <div className="space-y-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                      Key Highlights &amp; Accomplishments
+                    </h4>
+                    <ul className="space-y-2">
+                      {exp.achievements.map((achievement, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-normal">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
                           <span>{achievement}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div>
-                    <h4 className={`font-semibold mb-2 transition-colors duration-300 ${
-                      darkMode ? 'text-white' : 'text-gray-900'
-                    }`}>Technologies Used:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {experience.technologies.map((tech, index) => (
-                        <span
-                          key={index}
-                          className={`px-3 py-1 rounded-full text-xs font-medium transition-colors duration-300 ${
-                            darkMode ? 'bg-gray-700 text-gray-200' : 'bg-gray-200 text-gray-700'
-                          }`}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                  {/* Tech Stack */}
+                  <div className="pt-3 border-t border-slate-200 dark:border-white/10 flex flex-wrap gap-1.5 items-center">
+                    <span className="text-xs font-medium text-slate-400 mr-1">Skills:</span>
+                    {exp.technologies.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/5"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
